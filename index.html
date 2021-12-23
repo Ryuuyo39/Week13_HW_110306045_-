@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Guessing Game</title>
+</head>
+<body>
+	<link rel="stylesheet" href="Guessing Game.css">
+<form action="#">
+	<div class="c">
+	<h2>Guessing Game</h2>
+	<p><label>Your Guess (1 ~ 100)<br>
+		<input class="input" id="num" type="number" name="number"></label></p>
+	<p><input class="button" id="play" type="button" value="play"></p>
+	<div id="range">
+	<table id="t">
+		<thead>
+			<tr>
+				<th><strong>result</strong></th>
+			</tr>
+		</thead>
+	</table>
+</div>
+</form>
+</body>
+<script type="text/javascript">
+	var rand = Math.floor((Math.random() * 100) + 1);
+	var front = 1;
+	var behind = 100;
+
+	function start() {
+		var button = document.getElementById("play");
+		button.addEventListener("click", guess, false);
+	}
+
+	function guess() {
+		var num = document.getElementById("num").value;
+		if (num == rand) {
+			alert('BOOM!');
+		} else if (num > rand) {
+			var c = document.getElementById("range");
+			var t = document.createElement("table");
+			c.appendChild(t);
+			var tr = document.createElement("tr");
+			t.appendChild(tr);
+			var td = document.createElement("td");
+			tr.appendChild(td);
+ 			var newContent = document.createTextNode(front + "~" + num);
+ 			td.appendChild(newContent);
+			behind = num;
+		} else if (num < rand) {
+			var c = document.getElementById("range");
+			var t = document.createElement("table");
+			c.appendChild(t);
+			var tr = document.createElement("tr");
+			t.appendChild(tr);
+			var td = document.createElement("td");
+			tr.appendChild(td);
+ 			var newContent = document.createTextNode(num + "~" + behind);
+ 			td.appendChild(newContent);
+			front = num;
+		}
+	}
+
+	window.addEventListener("load", start, false);
+</script>
+</html>
