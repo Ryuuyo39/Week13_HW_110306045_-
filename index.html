@@ -38,7 +38,9 @@
 		var num = document.getElementById("num").value;
 		if (num == rand) {
 			alert('BOOM!');
-		} else if (num > rand) {
+			location.reload();
+		} 
+		if (num > rand) {
 			var c = document.getElementById("range");
 			var t = document.createElement("table");
 			c.appendChild(t);
