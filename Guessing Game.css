@@ -15,6 +15,7 @@
 
 .input {
 	margin-top: 5px;
+	margin-bottom: 20px;
     width: 396px;
     height: 26px;
     border: 1px solid;
@@ -26,6 +27,7 @@
 }
 
 .button {
+	margin-bottom: 20px;
 	color: white;
 	width: 254px;
 	height: 50px;
@@ -44,7 +46,6 @@ table {
 	width: 400px;
 	border-collapse: collapse;
 	border: dotted;
-	border-top: 0;
 	border-width: 1px;
 	border-color: gray;
 }
@@ -56,6 +57,9 @@ th {
 }
 
 td {
+	border-top: dotted;
+	border-width: 1px;
+	border-color: gray;
 	background-color: white;
 	font-family: monospace;
 }
